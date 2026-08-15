@@ -8,9 +8,9 @@ Testing Type: Manual Black-box Testing
 
 ## Test Environment
 
-OS:Windows 10
-Browser: Google Chrome
-Browser: Version 151.0.7922.138
+- OS:Windows 10
+- Browser: Google Chrome
+- Browser: 151.0.7922.138
 
 ## First-pass Observations
 
