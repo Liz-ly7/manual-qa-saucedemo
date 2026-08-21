@@ -310,3 +310,336 @@
 - `Price (high to low)` sorts products from the highest price to the lowest price.
 
 **Priority:** Medium
+
+### TC-PD-001 — Verify product details and information consistency
+
+**Related Test Condition:**
+- The correct product details page opens for the selected product.
+- Product information is consistent between the inventory page and the product details page.
+
+**Test Data:**
+- Product: `Sauce Labs Backpack`
+
+**Steps:**
+1. Click `Sauce Labs Backpack` on the inventory page.
+2. Review the product details page.
+3. Compare the displayed product information with the information on the inventory page.
+
+**Expected Result:**
+- The product details page for `Sauce Labs Backpack` opens.
+- The product name, description, price, and image are consistent with the inventory page.
+
+**Priority:** Medium
+
+### TC-PD-002 — Add a product to the cart from the product details page
+
+**Related Test Condition:**
+- Products can be added to the cart from the product details page.
+
+**Test Data:**
+- Product: `Sauce Labs Backpack`
+
+**Steps:**
+1. Click `Sauce Labs Backpack` on the inventory page.
+2. Click the Add to cart button on the product details page.
+
+**Expected Result:**
+- The product details page for `Sauce Labs Backpack` opens.
+- The Add to cart button changes to Remove.
+- The cart badge is updated correctly to show that the product has been added.
+
+**Priority:** High
+
+### TC-PD-003 — Remove a product from the cart from the product details page
+
+**Related Test Condition:**
+- Products can be removed from the cart from the product details page.
+
+**Additional Precondition:**
+- `Sauce Labs Backpack` has been added to the shopping cart.
+
+**Test Data:**
+- Product: `Sauce Labs Backpack`
+
+**Steps:**
+1. Open the product details page for `Sauce Labs Backpack`.
+2. Click the Remove button.
+
+**Expected Result:**
+- The Remove button changes to Add to cart.
+- The cart badge is updated correctly to show that the product has been removed.
+
+**Priority:** High
+
+### TC-PD-004 — Navigate back to the inventory page
+
+**Related Test Condition:**
+- The user can navigate back to the inventory page correctly.
+
+**Test Data:**
+- Product: `Sauce Labs Backpack`
+
+**Steps:**
+1. Click `Sauce Labs Backpack` on the inventory page to open the product details page.
+2. Click the Back to products button.
+
+**Expected Result:**
+- The user is returned to the inventory page.
+- The inventory page is displayed correctly.
+
+**Priority:** Medium
+
+## Feature 4: Shopping Cart
+
+### Common Preconditions
+
+- User is logged in as `standard_user`.
+
+### TC-CART-001 — Verify products and product count in the shopping cart
+
+**Related Test Conditions:**
+- The cart displays the correct products that were added.
+- The cart displays the correct number of added products.
+
+**Additional Precondition:**
+- The shopping cart is empty.
+
+**Test Data:**
+- Product 1: `Sauce Labs Backpack`
+- Product 2: `Sauce Labs Bike Light`
+
+**Steps:**
+1. Add `Sauce Labs Backpack` to the cart.
+2. Add `Sauce Labs Bike Light` to the cart.
+3. Check the cart badge.
+4. Open the shopping cart.
+
+**Expected Result:**
+- The cart badge displays `2`.
+- The shopping cart contains exactly two products.
+- `Sauce Labs Backpack` and `Sauce Labs Bike Light` are both displayed in the shopping cart.
+
+**Priority:** High
+
+### TC-CART-002 — Remove products from the shopping cart
+
+**Related Test Condition:**
+- Products can be removed from the cart correctly.
+
+**Additional Precondition:**
+- The shopping cart contains `Sauce Labs Backpack` and `Sauce Labs Bike Light`.
+
+**Test Data:**
+- Product 1: `Sauce Labs Backpack`
+- Product 2: `Sauce Labs Bike Light`
+
+**Steps:**
+1. Open the shopping cart.
+2. Remove `Sauce Labs Backpack`.
+3. Check the cart contents and cart badge.
+4. Remove `Sauce Labs Bike Light`.
+5. Check the cart contents and cart badge again.
+
+**Expected Result:**
+- After `Sauce Labs Backpack` is removed, only `Sauce Labs Bike Light` remains in the cart.
+- The cart badge displays `1`.
+- After `Sauce Labs Bike Light` is removed, the shopping cart is empty.
+- The cart badge is no longer displayed.
+
+**Priority:** High
+
+### TC-CART-003 — Continue shopping from the shopping cart
+
+**Related Test Condition:**
+- Continue Shopping navigates back to the inventory page correctly.
+
+**Additional Precondition:**
+- User is on the shopping cart page.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Click the Continue Shopping button.
+
+**Expected Result:**
+- The inventory page is displayed.
+
+**Priority:** Medium
+
+### TC-CART-004 — Proceed to checkout from the shopping cart
+
+**Related Test Condition:**
+- Checkout proceeds to the checkout information page correctly.
+
+**Additional Precondition:**
+- User is on the shopping cart page.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Click the Checkout button.
+
+**Expected Result:**
+- The checkout information page is displayed.
+
+**Priority:** High
+
+## Feature 5: Checkout
+
+### Checkout Information
+
+#### Common Preconditions
+
+- User is logged in as `standard_user`.
+- User has at least one product in the shopping cart.
+- User is on the checkout information page.
+
+### TC-CHK-INFO-001 — Continue checkout with valid required information
+
+**Related Test Conditions:**
+- Required checkout information must be provided before continuing.
+- Checkout information fields accept user input correctly.
+- Continue proceeds to the checkout overview when valid required information is provided.
+
+**Test Data:**
+- First Name: `Test`
+- Last Name: `User`
+- Postal Code: `10001`
+
+**Steps:**
+1. Enter the first name in the First Name field.
+2. Enter the last name in the Last Name field.
+3. Enter the postal code in the ZIP / Postal Code field.
+4. Click the Continue button.
+
+**Expected Result:**
+- All three fields accept the entered data.
+- The checkout overview page is displayed.
+
+**Priority:** High
+
+### TC-CHK-INFO-002 — Continue checkout with a blank first name
+
+**Related Test Conditions:**
+- Required checkout information must be provided before continuing.
+- Missing required information is handled with an appropriate error message.
+
+**Test Data:**
+- First Name: `[blank]`
+- Last Name: `User`
+- Postal Code: `10001`
+
+**Steps:**
+1. Leave the First Name field blank.
+2. Enter the last name in the Last Name field.
+3. Enter the postal code in the ZIP / Postal Code field.
+4. Click the Continue button.
+
+**Expected Result:**
+- Checkout does not proceed to the checkout overview page.
+- An appropriate error message indicating that the first name is required is displayed.
+- The user remains on the checkout information page.
+
+**Priority:** Medium
+
+### TC-CHK-INFO-003 — Continue checkout with a blank last name
+
+**Related Test Conditions:**
+- Required checkout information must be provided before continuing.
+- Missing required information is handled with an appropriate error message.
+
+**Test Data:**
+- First Name: `Test`
+- Last Name: `[blank]`
+- Postal Code: `10001`
+
+**Steps:**
+1. Enter the first name in the First Name field.
+2. Leave the Last Name field blank.
+3. Enter the postal code in the ZIP / Postal Code field.
+4. Click the Continue button.
+
+**Expected Result:**
+- Checkout does not proceed to the checkout overview page.
+- An appropriate error message indicating that the last name is required is displayed.
+- The user remains on the checkout information page.
+
+**Priority:** Medium
+
+### TC-CHK-INFO-004 — Continue checkout with a blank postal code
+
+**Related Test Conditions:**
+- Required checkout information must be provided before continuing.
+- Missing required information is handled with an appropriate error message.
+
+**Test Data:**
+- First Name: `Test`
+- Last Name: `User`
+- Postal Code: `[blank]`
+
+**Steps:**
+1. Enter the first name in the First Name field.
+2. Enter the last name in the Last Name field.
+3. Leave the ZIP / Postal Code field blank.
+4. Click the Continue button.
+
+**Expected Result:**
+- Checkout does not proceed to the checkout overview page.
+- An appropriate error message indicating that the postal code is required is displayed.
+- The user remains on the checkout information page.
+
+**Priority:** Medium
+
+### TC-CHK-INFO-005 — Continue checkout with all required fields blank
+
+**Related Test Conditions:**
+- Required checkout information must be provided before continuing.
+- Missing required information is handled with an appropriate error message.
+
+**Test Data:**
+- First Name: `[blank]`
+- Last Name: `[blank]`
+- Postal Code: `[blank]`
+
+**Steps:**
+1. Leave the First Name field blank.
+2. Leave the Last Name field blank.
+3. Leave the ZIP / Postal Code field blank.
+4. Click the Continue button.
+
+**Expected Result:**
+- Checkout does not proceed to the checkout overview page.
+- An appropriate error message indicating that required checkout information is missing is displayed.
+- The user remains on the checkout information page.
+
+**Priority:** Medium
+
+### TC-CHK-INFO-006 — Edit entered checkout information
+
+**Related Test Condition:**
+- Entered checkout information can be edited correctly.
+
+**Test Data:**
+- Initial First Name: `Test`
+- Updated First Name: `Edited`
+- Initial Last Name: `User`
+- Updated Last Name: `Tester`
+- Initial Postal Code: `10001`
+- Updated Postal Code: `20002`
+
+**Steps:**
+1. Enter the initial first name, last name, and postal code.
+2. Replace the First Name value with `Edited`.
+3. Replace the Last Name value with `Tester`.
+4. Replace the ZIP / Postal Code value with `20002`.
+5. Check the values displayed in all three fields.
+6. Click the Continue button.
+
+**Expected Result:**
+- Each field accepts the updated value.
+- The updated values remain displayed correctly before continuing.
+- The checkout overview page is displayed after clicking Continue.
+
+**Priority:** Medium
