@@ -162,6 +162,8 @@
 
 **Priority:** High
 
+## Feature 2: Product Inventory
+
 ### TC-INV-001 — Verify product images on the inventory page
 
 **Related Test Condition:** Product images correspond to the correct products.
@@ -310,6 +312,13 @@
 - `Price (high to low)` sorts products from the highest price to the lowest price.
 
 **Priority:** Medium
+
+## Feature 3: Product Details
+
+### Common Preconditions
+
+- User is logged in as `standard_user`.
+- User is on the SauceDemo inventory page.
 
 ### TC-PD-001 — Verify product details and information consistency
 
@@ -502,7 +511,7 @@
 
 - ZIP / Postal Code format validation is pending requirement clarification because the expected format and validation rules are not defined.
 
-### TC-CHK-INFO-001 — Continue checkout with all required information provided
+#### TC-CHK-INFO-001 — Continue checkout with all required information provided
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -526,7 +535,7 @@
 
 **Priority:** High
 
-### TC-CHK-INFO-002 — Continue checkout with a blank first name
+#### TC-CHK-INFO-002 — Continue checkout with a blank first name
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -550,7 +559,7 @@
 
 **Priority:** Medium
 
-### TC-CHK-INFO-003 — Continue checkout with a blank last name
+#### TC-CHK-INFO-003 — Continue checkout with a blank last name
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -574,7 +583,7 @@
 
 **Priority:** Medium
 
-### TC-CHK-INFO-004 — Continue checkout with a blank postal code
+#### TC-CHK-INFO-004 — Continue checkout with a blank postal code
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -598,7 +607,7 @@
 
 **Priority:** Medium
 
-### TC-CHK-INFO-005 — Continue checkout with all required fields blank
+#### TC-CHK-INFO-005 — Continue checkout with all required fields blank
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -622,7 +631,7 @@
 
 **Priority:** Medium
 
-### TC-CHK-INFO-006 — Edit entered checkout information
+#### TC-CHK-INFO-006 — Edit entered checkout information
 
 **Related Test Condition:**
 - Entered checkout information can be edited correctly.
@@ -656,10 +665,10 @@
 
 - User is logged in as `standard_user`.
 - `Sauce Labs Backpack` and `Sauce Labs Bike Light` are in the shopping cart.
-- User has entered valid required checkout information.
+- User has entered values in all required checkout information fields.
 - User is on the checkout overview page.
 
-### TC-CHK-OVR-001 — Verify order information and cart items
+#### TC-CHK-OVR-001 — Verify order information and cart items
 
 **Related Test Conditions:**
 - Products in the shopping cart are carried over correctly to the checkout overview.
@@ -683,7 +692,7 @@
 
 **Priority:** High
 
-### TC-CHK-OVR-002 — Verify item total, tax, and total calculation
+#### TC-CHK-OVR-002 — Verify item total and total calculation
 
 **Related Test Condition:**
 - The total is calculated correctly from the item total and tax.
@@ -705,7 +714,7 @@
 
 **Priority:** High
 
-### TC-CHK-OVR-003 — Complete checkout using the Finish button
+#### TC-CHK-OVR-003 — Complete checkout using the Finish button
 
 **Related Test Condition:**
 - Finish proceeds to the checkout completion page correctly.
@@ -737,7 +746,9 @@
 
 **Priority:** Medium
 
-### TC-CHK-CMP-001 — Verify checkout completion and cart state
+### Checkout Complete
+
+#### TC-CHK-CMP-001 — Verify checkout completion and cart state
 
 **Related Test Conditions:**
 - A clear order completion message is displayed.
@@ -762,7 +773,7 @@
 
 **Priority:** Medium
 
-### TC-CHK-CMP-002 — Return to inventory using Back Home
+#### TC-CHK-CMP-002 — Return to inventory using Back Home
 
 **Related Test Condition:**
 - Back Home returns the user to the inventory page correctly.
@@ -780,6 +791,12 @@
 - The inventory page is displayed.
 
 **Priority:** Medium
+
+## Feature 6: Side Menu / Navigation
+
+### Common Preconditions
+
+- User is logged in as `standard_user`.
 
 ### TC-NAV-001 — Open and close the side menu
 
@@ -801,11 +818,11 @@
 
 ### TC-NAV-002 — Verify menu navigation links
 
-**Additional Precondition:**
-- User is on the shopping cart page.
-
 **Related Test Condition:**
 - Menu navigation links lead to the correct destinations.
+
+**Additional Precondition:**
+- User is on the shopping cart page.
 
 **Test Data:**
 - N/A
@@ -849,11 +866,11 @@
 **Related Test Condition:**
 - Reset App State resets the application state as intended.
 
+- **Additional Precondition:**
+- The application has a modified state, such as products added to the shopping cart.
+
 **Test Data:**
 - N/A
-
-**Additional Precondition:**
-- The application has a modified state, such as products added to the shopping cart.
 
 **Steps:**
 1. Open the side menu.
