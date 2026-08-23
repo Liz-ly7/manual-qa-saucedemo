@@ -402,6 +402,7 @@
 - The cart displays the correct number of added products.
 
 **Additional Precondition:**
+- User is on the SauceDemo inventory page.
 - The shopping cart is empty.
 
 **Test Data:**
@@ -427,6 +428,7 @@
 - Products can be removed from the cart correctly.
 
 **Additional Precondition:**
+- User is on the SauceDemo inventory page.
 - The shopping cart contains `Sauce Labs Backpack` and `Sauce Labs Bike Light`.
 
 **Test Data:**
@@ -496,7 +498,11 @@
 - User has at least one product in the shopping cart.
 - User is on the checkout information page.
 
-### TC-CHK-INFO-001 — Continue checkout with valid required information
+#### Pending Test Design
+
+- ZIP / Postal Code format validation is pending requirement clarification because the expected format and validation rules are not defined.
+
+### TC-CHK-INFO-001 — Continue checkout with all required information provided
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -794,6 +800,9 @@
 **Priority:** Medium
 
 ### TC-NAV-002 — Verify menu navigation links
+
+**Additional Precondition:**
+- User is on the shopping cart page.
 
 **Related Test Condition:**
 - Menu navigation links lead to the correct destinations.
