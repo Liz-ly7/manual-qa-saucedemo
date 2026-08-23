@@ -511,7 +511,7 @@
 
 - ZIP / Postal Code format validation is pending requirement clarification because the expected format and validation rules are not defined.
 
-#### TC-CHK-INFO-001 — Continue checkout with all required information provided
+#### TC-CHK-INFO-001 — Continue proceeds to the checkout overview when valid required information is provided.
 
 **Related Test Conditions:**
 - Required checkout information must be provided before continuing.
@@ -730,7 +730,7 @@
 
 **Priority:** High
 
-### TC-CHK-OVR-004 — Cancel checkout from the overview page
+#### TC-CHK-OVR-004 — Cancel checkout from the overview page
 
 **Related Test Condition:**
 - Cancel navigates to the intended destination correctly.
@@ -866,7 +866,7 @@
 **Related Test Condition:**
 - Reset App State resets the application state as intended.
 
-- **Additional Precondition:**
+**Additional Precondition:**
 - The application has a modified state, such as products added to the shopping cart.
 
 **Test Data:**
