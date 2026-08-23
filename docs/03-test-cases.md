@@ -643,3 +643,217 @@
 - The checkout overview page is displayed after clicking Continue.
 
 **Priority:** Medium
+
+### Checkout Overview
+
+#### Common Preconditions
+
+- User is logged in as `standard_user`.
+- `Sauce Labs Backpack` and `Sauce Labs Bike Light` are in the shopping cart.
+- User has entered valid required checkout information.
+- User is on the checkout overview page.
+
+### TC-CHK-OVR-001 — Verify order information and cart items
+
+**Related Test Conditions:**
+- Products in the shopping cart are carried over correctly to the checkout overview.
+- The quantity of each product is displayed correctly.
+- Payment information is displayed correctly and clearly.
+- Shipping information is displayed correctly and clearly.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Review the products and quantities displayed on the checkout overview page.
+2. Review the Payment Information section.
+3. Review the Shipping Information section.
+
+**Expected Result:**
+- `Sauce Labs Backpack` and `Sauce Labs Bike Light` are displayed on the checkout overview page.
+- The quantity of each product is displayed correctly.
+- Payment information is displayed clearly.
+- Shipping information is displayed clearly.
+
+**Priority:** High
+
+### TC-CHK-OVR-002 — Verify item total, tax, and total calculation
+
+**Related Test Condition:**
+- The total is calculated correctly from the item total and tax.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Review the prices of the products on the checkout overview page.
+2. Calculate the sum of the product prices.
+3. Compare the calculated sum with the displayed Item total.
+4. Review the displayed Tax.
+5. Calculate the Item total plus Tax.
+6. Compare the calculated amount with the displayed Total.
+
+**Expected Result:**
+- The Item total equals the sum of the product prices.
+- The Total equals the Item total plus Tax.
+
+**Priority:** High
+
+### TC-CHK-OVR-003 — Complete checkout using the Finish button
+
+**Related Test Condition:**
+- Finish proceeds to the checkout completion page correctly.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Click the Finish button.
+
+**Expected Result:**
+- The checkout completion page is displayed.
+
+**Priority:** High
+
+### TC-CHK-OVR-004 — Cancel checkout from the overview page
+
+**Related Test Condition:**
+- Cancel navigates to the intended destination correctly.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Click the Cancel button.
+
+**Expected Result:**
+- The inventory page is displayed.
+
+**Priority:** Medium
+
+### TC-CHK-CMP-001 — Verify checkout completion and cart state
+
+**Related Test Conditions:**
+- A clear order completion message is displayed.
+- The cart is cleared after the order is completed.
+
+**Additional Precondition:**
+- The order has been successfully completed.
+- User is on the checkout completion page.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Review the order completion message.
+2. Check the shopping cart badge.
+3. Open the shopping cart and review its contents.
+
+**Expected Result:**
+- A clear order completion message is displayed.
+- The cart badge is not displayed.
+- The shopping cart contains no products.
+
+**Priority:** Medium
+
+### TC-CHK-CMP-002 — Return to inventory using Back Home
+
+**Related Test Condition:**
+- Back Home returns the user to the inventory page correctly.
+
+**Additional Precondition:**
+- User is on the checkout completion page.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Click the Back Home button.
+
+**Expected Result:**
+- The inventory page is displayed.
+
+**Priority:** Medium
+
+### TC-NAV-001 — Open and close the side menu
+
+**Related Test Condition:**
+- The side menu can be opened and closed correctly.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Click the hamburger menu icon.
+2. Click the Close menu button.
+
+**Expected Result:**
+- The side menu opens after clicking the hamburger menu icon.
+- The side menu closes after clicking the Close menu button.
+
+**Priority:** Medium
+
+### TC-NAV-002 — Verify menu navigation links
+
+**Related Test Condition:**
+- Menu navigation links lead to the correct destinations.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Open the side menu.
+2. Click All Items.
+3. Review the displayed page.
+4. Open the side menu again.
+5. Click About.
+
+**Expected Result:**
+- All Items navigates to the inventory page.
+- About navigates to the intended Sauce Labs page.
+
+**Priority:** Medium
+
+### TC-NAV-003 — Logout and verify session state after refresh
+
+**Related Test Conditions:**
+- Logout ends the user session correctly.
+- The user remains logged out after refreshing the page.
+
+**Test Data:**
+- N/A
+
+**Steps:**
+1. Open the side menu.
+2. Click Logout.
+3. Refresh the page.
+
+**Expected Result:**
+- The user is returned to the login page after logging out.
+- After the page is refreshed, the user remains logged out.
+- The login page remains displayed.
+
+**Priority:** High
+
+### TC-NAV-004 — Reset application state
+
+**Related Test Condition:**
+- Reset App State resets the application state as intended.
+
+**Test Data:**
+- N/A
+
+**Additional Precondition:**
+- The application has a modified state, such as products added to the shopping cart.
+
+**Steps:**
+1. Open the side menu.
+2. Click Reset App State.
+3. Review the application state after the reset.
+
+**Expected Result:**
+- TBD — Expected reset behavior requires requirement clarification.
+
+**Priority:** Medium
+
+**Status:** Pending requirement clarification
