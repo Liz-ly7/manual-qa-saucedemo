@@ -1,0 +1,368 @@
+### TC-LOGIN-001 — Login with valid credentials
+
+**Actual Result:**
+
+* Login succeeded.
+* The product inventory page was displayed correctly.
+
+**Status:** Pass
+
+### TC-LOGIN-002 — Login with an invalid username
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Username and password do not match any user in this service.`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-LOGIN-003 — Login with an invalid password
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Username and password do not match any user in this service.`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-LOGIN-004 — Login with a blank username
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Epic sadface: Username is required`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-LOGIN-005 — Login with a blank password
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Password is required`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-LOGIN-006 — Login with both username and password blank
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Username is required`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-LOGIN-007 — Login with a locked-out account
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Sorry, this user has been locked out.`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-LOGIN-008 — Login with both username and password invalid
+
+**Actual Result:**
+
+* Login was rejected.
+* Error message displayed: `Username and password do not match any user in this service.`
+* The user remained on the login page.
+
+**Status:** Pass
+
+### TC-INV-001 — Verify product images on the inventory page
+
+**Actual Result:**
+
+* Each product displayed an image that corresponded to the correct product.
+
+**Status:** Pass
+
+### TC-INV-002 — Verify product information on the inventory page
+
+**Actual Result:**
+
+* All six products displayed a name, description, and price.
+* Product information was clearly associated with the corresponding product.
+
+**Status:** Pass
+
+### TC-INV-003 — Add a product to the cart
+
+**Actual Result:**
+
+* The Add to cart button changed to Remove after the product was added.
+* The cart badge displayed `1`.
+* `Sauce Labs Backpack` was displayed in the shopping cart.
+
+**Status:** Pass
+
+### TC-INV-004 — Remove a product from the cart from the inventory page
+
+**Actual Result:**
+
+* The Remove button changed back to Add to cart.
+* The cart badge was updated correctly.
+* `Sauce Labs Backpack` was no longer displayed in the shopping cart.
+
+**Status:** Pass
+
+### TC-INV-005 — Product links navigate to the correct product details
+
+**Actual Result:**
+
+* The product details page for `Sauce Labs Backpack` opened.
+* The displayed product name corresponded to the selected product.
+
+**Status:** Pass
+
+### TC-INV-006 — Verify product sorting
+
+**Actual Result:**
+
+* `Name (A to Z)` sorted products alphabetically from A to Z.
+* `Name (Z to A)` sorted products alphabetically from Z to A.
+* `Price (low to high)` sorted products from the lowest price to the highest price.
+* `Price (high to low)` sorted products from the highest price to the lowest price.
+
+**Status:** Pass
+
+### TC-PD-001 — Verify product details and information consistency
+
+**Actual Result:**
+
+* The product details page for `Sauce Labs Backpack` opened.
+* The product name, description, price, and image were consistent with the inventory page.
+
+**Status:** Pass
+
+### TC-PD-002 — Add a product to the cart from the product details page
+
+**Actual Result:**
+
+* The product details page for `Sauce Labs Backpack` opened.
+* The Add to cart button changed to Remove.
+* The cart badge was updated correctly to show that the product had been added.
+
+**Status:** Pass
+
+### TC-PD-003 — Remove a product from the cart from the product details page
+
+**Actual Result:**
+
+* The Remove button changed to Add to cart.
+* The cart badge was updated correctly to show that the product had been removed.
+
+**Status:** Pass
+
+### TC-PD-004 — Navigate back to the inventory page
+
+**Actual Result:**
+
+* The user was returned to the inventory page.
+* The inventory page was displayed correctly.
+
+**Status:** Pass
+
+### TC-CART-001 — Verify products and product count in the shopping cart
+
+**Actual Result:**
+
+* The cart badge displayed `2`.
+* The shopping cart contained exactly two products.
+* `Sauce Labs Backpack` and `Sauce Labs Bike Light` were both displayed in the shopping cart.
+
+**Status:** Pass
+
+### TC-CART-002 — Remove products from the shopping cart
+
+**Actual Result:**
+
+* After `Sauce Labs Backpack` was removed, only `Sauce Labs Bike Light` remained in the cart.
+* The cart badge displayed `1`.
+* After `Sauce Labs Bike Light` was removed, the shopping cart was empty.
+* The cart badge was no longer displayed.
+
+**Status:** Pass
+
+### TC-CART-003 — Continue shopping from the shopping cart
+
+**Actual Result:**
+
+* The inventory page was displayed.
+
+**Status:** Pass
+
+### TC-CART-004 — Proceed to checkout from the shopping cart
+
+**Actual Result:**
+
+* The checkout information page was displayed.
+
+**Status:** Pass
+
+### TC-CHK-INFO-001 — Continue with valid required information
+
+**Actual Result:**
+
+* All three fields accepted the entered data.
+* The checkout overview page was displayed.
+
+**Status:** Pass
+
+### TC-CHK-INFO-002 — Continue checkout with a blank first name
+
+**Actual Result:**
+
+* Checkout did not proceed.
+* Error message displayed: `Error: First Name is required`
+
+**Status:** Pass
+
+### TC-CHK-INFO-003 — Continue checkout with a blank last name
+
+**Actual Result:**
+
+* Checkout did not proceed.
+* Error message displayed: `Error: Last Name is required`
+
+**Status:** Pass
+
+### TC-CHK-INFO-004 — Continue checkout with a blank postal code
+
+**Actual Result:**
+
+* Checkout did not proceed.
+* Error message displayed: `Error: Postal Code is required`
+
+**Status:** Pass
+
+### TC-CHK-INFO-005 — Continue checkout with all required fields blank
+
+**Actual Result:**
+
+* Checkout did not proceed.
+* Error message displayed: `Error: First Name is required`
+
+**Status:** Pass
+
+### TC-CHK-INFO-006 — Edit entered checkout information
+
+**Actual Result:**
+
+* Each field accepted the updated value.
+* The updated values remained displayed correctly before continuing.
+* The checkout overview page was displayed after clicking Continue.
+
+**Status:** Pass
+
+### TC-CHK-OVR-001 — Verify order information and cart items
+
+**Actual Result:**
+
+* `Sauce Labs Backpack` and `Sauce Labs Bike Light` were displayed on the checkout overview page.
+* The quantity of each product was displayed correctly.
+* Payment information was displayed clearly.
+* Shipping information was displayed clearly.
+
+**Status:** Pass
+
+### TC-CHK-OVR-002 — Verify item total and total calculation
+
+**Actual Result:**
+
+* The Item total equaled the sum of the product prices.
+* The Total equaled the Item total plus Tax.
+
+**Status:** Pass
+
+### TC-CHK-OVR-003 — Complete checkout using the Finish button
+
+**Actual Result:**
+
+* The checkout completion page was displayed.
+
+**Status:** Pass
+
+### TC-CHK-OVR-004 — Cancel checkout from the overview page
+
+**Actual Result:**
+
+* Clicking Cancel returned the user to the shopping cart page.
+
+**Expected Result:**
+
+* The inventory page should be displayed.
+
+**Status:** Failed / Requires requirement clarification
+
+**Note:**
+
+* The actual destination differs from the expected result defined in the test case.
+* The intended destination for the Cancel button should be confirmed before determining whether this is a product defect or an incorrect test expectation.
+
+### TC-CHK-CMP-001 — Verify checkout completion and cart state
+
+**Actual Result:**
+
+* A clear order completion message was displayed.
+* The cart badge was not displayed.
+* The shopping cart contained no products.
+
+**Status:** Pass
+
+### TC-CHK-CMP-002 — Return to inventory using Back Home
+
+**Actual Result:**
+
+* The inventory page was displayed.
+
+**Status:** Pass
+
+### TC-NAV-001 — Open and close the side menu
+
+**Actual Result:**
+
+* The side menu opened after clicking the hamburger menu icon.
+* The side menu closed after clicking the Close menu button.
+
+**Status:** Pass
+
+### TC-NAV-002 — Verify menu navigation links
+
+**Actual Result:**
+
+* All Items navigated to the inventory page.
+* About navigated to the intended Sauce Labs page.
+
+**Status:** Pass
+
+### TC-NAV-003 — Logout and verify session state after refresh
+
+**Actual Result:**
+
+* The user was returned to the login page after logging out.
+* After refreshing the page, the user remained logged out.
+* The login page remained displayed.
+
+**Status:** Pass
+
+### TC-NAV-004 — Reset application state
+
+**Actual Result:**
+
+* No visible change was observed after clicking Reset App State.
+
+**Status:** Pending requirement clarification
+
+**Note:**
+
+* The expected behavior of Reset App State is not defined.
+* Further verification is required before determining whether the observed behavior is correct or defective.
