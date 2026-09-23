@@ -162,6 +162,29 @@
 
 **Priority:** High
 
+### TC-LOGIN-008 — Login with both username and password invalid
+
+**Related Test Condition:** Login with both username and password invalid.
+
+**Precondition:** 
+- User is on the SauceDemo login page.
+
+**Test Data:**
+- Username: invalid_user
+- Password: invalid_password
+
+**Steps:**
+1. Enter the invalid username in the Username field.
+2. Enter the invalid password in the Password field.
+3. Click the Login button.
+
+**Expected Result:**
+- Login is rejected.
+- An appropriate error message is displayed.
+- The user remains on the login page.
+
+**Priority:** Medium
+
 ## Feature 2: Product Inventory
 
 ### TC-INV-001 — Verify product images on the inventory page
