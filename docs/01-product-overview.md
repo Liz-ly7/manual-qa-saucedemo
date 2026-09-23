@@ -10,7 +10,7 @@ Testing Type: Manual Black-box Testing
 
 - OS:Windows 10
 - Browser: Google Chrome
-- Browser: 151.0.7922.138
+- Browser Version: 151.0.7922.138
 
 ## First-pass Observations
 
@@ -28,7 +28,7 @@ Testing Type: Manual Black-box Testing
 ### What can I do in this application?
 
 - Log in using the provided credentials.
-- Browse rpoducts.
+- Browse products.
 - Add products to the shopping cart.
 - Remove products from the shopping cart.
 - Proceed through the checkout process.
