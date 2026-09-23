@@ -58,7 +58,7 @@
 - Continue proceeds to the checkout overview when valid required information is provided.
 
 
-### Check Overview
+### Checkout Overview
 
 #### Test Conditions
 
