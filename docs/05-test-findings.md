@@ -78,3 +78,25 @@ Detailed defect reports are documented separately in `06-defect-reports.md`.
 **Next Action:**
 - Clarify which application data or state Reset App State is expected to reset.
 - Define the expected result and execute the test again.
+
+## F-003 — ZIP / Postal Code accepts alphabetic input
+
+**Related Area:** Checkout Information
+
+**Account:** `error_user`
+
+**Actual Result:**
+- Alphabetic input was accepted in the ZIP / Postal Code field.
+- No validation error was displayed.
+
+**Finding Type:** Requirement clarification
+
+**Status:** Open — clarification required
+
+**Analysis:**
+- The expected format and validation rules for ZIP / Postal Code are not defined.
+- Therefore, accepting alphabetic input cannot currently be classified as a defect.
+
+**Next Action:**
+- Confirm the required ZIP / Postal Code format and validation rules.
+- Define the expected result and retest.
