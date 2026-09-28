@@ -61,24 +61,6 @@ No confirmed defects were identified during the executed test cases.
 - Clarify which application data or state Reset App State is expected to reset.
 - Define the expected result and execute the test again.
 
-## Exploratory Testing — problem_user
-
-Exploratory testing with `problem_user` identified four reproducible functional defects:
-
-- Incorrect product images are displayed on the inventory page.
-- Products cannot be removed from the cart from the inventory page.
-- Products cannot be added to the cart from the product details page.
-- Entering a Last Name modifies the First Name value instead.
-
-Detailed defect reports are documented separately in `06-defect-reports.md`.
-- The expected scope of Reset App State is not defined.
-- It is unclear which application state should be reset.
-- Because no expected behavior is available, the observed result cannot be classified as Pass or Fail.
-
-**Next Action:**
-- Clarify which application data or state Reset App State is expected to reset.
-- Define the expected result and execute the test again.
-
 ## F-003 — ZIP / Postal Code accepts alphabetic input
 
 **Related Area:** Checkout Information
@@ -100,3 +82,44 @@ Detailed defect reports are documented separately in `06-defect-reports.md`.
 **Next Action:**
 - Confirm the required ZIP / Postal Code format and validation rules.
 - Define the expected result and retest.
+
+## F-004 — Noticeable response delays for performance_glitch_user
+
+**Account:** `performance_glitch_user`
+
+**Finding Type:** Performance observation / Requirement clarification
+
+**Status:** Open — performance requirement not defined
+
+**Observed Behavior:**
+- Login took approximately 5 seconds.
+- Opening a product details page showed no noticeable delay.
+- Returning to the inventory page took approximately 5 seconds.
+- Returning after completing checkout took approximately 3 seconds.
+
+**Analysis:**
+- The account responds noticeably more slowly during several navigation actions.
+- No response-time requirement or acceptable performance threshold is defined.
+- Therefore, the observed delays cannot currently be classified as a confirmed performance defect.
+
+**Next Action:**
+- Define acceptable response-time criteria.
+- Repeat the performance checks against the defined threshold.
+
+## Exploratory Testing — problem_user
+
+Exploratory testing with `problem_user` identified four reproducible functional defects:
+
+- Incorrect product images are displayed on the inventory page.
+- Products cannot be removed from the cart from the inventory page.
+- Products cannot be added to the cart from the product details page.
+- Entering a Last Name modifies the First Name value instead.
+
+Detailed defect reports are documented separately in `06-defect-reports.md`.
+- The expected scope of Reset App State is not defined.
+- It is unclear which application state should be reset.
+- Because no expected behavior is available, the observed result cannot be classified as Pass or Fail.
+
+**Next Action:**
+- Clarify which application data or state Reset App State is expected to reset.
+- Define the expected result and execute the test again.
