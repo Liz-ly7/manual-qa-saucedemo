@@ -1,4 +1,4 @@
-# Defect Reports — problem_user
+# Defect Reports
 
 ## BUG-001 — Incorrect product images displayed on inventory page
 
