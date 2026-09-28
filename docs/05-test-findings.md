@@ -60,3 +60,21 @@ No confirmed defects were identified during the executed test cases.
 **Next Action:**
 - Clarify which application data or state Reset App State is expected to reset.
 - Define the expected result and execute the test again.
+
+## Exploratory Testing — problem_user
+
+Exploratory testing with `problem_user` identified four reproducible functional defects:
+
+- Incorrect product images are displayed on the inventory page.
+- Products cannot be removed from the cart from the inventory page.
+- Products cannot be added to the cart from the product details page.
+- Entering a Last Name modifies the First Name value instead.
+
+Detailed defect reports are documented separately in `06-defect-reports.md`.
+- The expected scope of Reset App State is not defined.
+- It is unclear which application state should be reset.
+- Because no expected behavior is available, the observed result cannot be classified as Pass or Fail.
+
+**Next Action:**
+- Clarify which application data or state Reset App State is expected to reset.
+- Define the expected result and execute the test again.
