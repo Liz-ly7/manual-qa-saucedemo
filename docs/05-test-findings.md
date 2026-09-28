@@ -2,9 +2,63 @@
 
 ## Summary
 
-During test execution, two cases required further investigation because the observed behavior could not be confidently classified as a product defect without clearer requirements.
+During scripted test case execution, two cases required further investigation because the observed behavior could not be confidently classified as a product defect without clearer requirements.
 
-No confirmed defects were identified during the executed test cases.
+No confirmed defects were identified during the scripted test case execution.
+
+Additional exploratory testing with special test users identified 11 confirmed functional and visual defects. Detailed defect reports are documented separately in `06-defect-reports.md`.
+
+Additional observations involving ZIP / Postal Code validation and application response time also require clearer requirements before they can be classified as defects.
+
+---
+
+## Exploratory Testing Summary
+
+### problem_user
+
+Exploratory testing with `problem_user` identified several reproducible functional defects:
+
+- Incorrect product images are displayed on the inventory page.
+- Products cannot be removed from the cart from the inventory page.
+- Products cannot be added to the cart from the product details page.
+- Entering a Last Name modifies the First Name value instead.
+
+Detailed defect reports are documented separately in `06-defect-reports.md`.
+
+### error_user
+
+Exploratory testing with `error_user` identified several reproducible functional issues:
+
+- Products cannot be removed from the cart from the inventory page.
+- The product description is missing from the product details page.
+- The Last Name field does not accept input during checkout.
+- Checkout can proceed even when the Last Name field is blank.
+
+Alphabetic input was also accepted in the ZIP / Postal Code field. Because the expected validation rules are not defined, this observation is documented separately as `F-003`.
+
+Detailed confirmed defect reports are documented separately in `06-defect-reports.md`.
+
+### visual_user
+
+Exploratory testing with `visual_user` identified several reproducible visual defects:
+
+- The image displayed for `Sauce Labs Backpack` does not correspond to the product.
+- The Checkout button is visually misaligned.
+- The shopping cart button is visually misaligned.
+- The hamburger menu button is visually misaligned.
+
+Detailed defect reports are documented separately in `06-defect-reports.md`.
+
+### performance_glitch_user
+
+Exploratory testing with `performance_glitch_user` showed noticeable response delays during several actions:
+
+- Login took approximately 5 seconds.
+- Opening a product details page showed no noticeable delay.
+- Returning to the inventory page took approximately 5 seconds.
+- Returning after completing checkout took approximately 3 seconds.
+
+Because no response-time requirement or acceptable performance threshold is defined, these observations are documented as `F-004` rather than as a confirmed defect.
 
 ---
 
@@ -61,6 +115,8 @@ No confirmed defects were identified during the executed test cases.
 - Clarify which application data or state Reset App State is expected to reset.
 - Define the expected result and execute the test again.
 
+---
+
 ## F-003 — ZIP / Postal Code accepts alphabetic input
 
 **Related Area:** Checkout Information
@@ -82,6 +138,8 @@ No confirmed defects were identified during the executed test cases.
 **Next Action:**
 - Confirm the required ZIP / Postal Code format and validation rules.
 - Define the expected result and retest.
+
+---
 
 ## F-004 — Noticeable response delays for performance_glitch_user
 
@@ -105,21 +163,3 @@ No confirmed defects were identified during the executed test cases.
 **Next Action:**
 - Define acceptable response-time criteria.
 - Repeat the performance checks against the defined threshold.
-
-## Exploratory Testing — problem_user
-
-Exploratory testing with `problem_user` identified four reproducible functional defects:
-
-- Incorrect product images are displayed on the inventory page.
-- Products cannot be removed from the cart from the inventory page.
-- Products cannot be added to the cart from the product details page.
-- Entering a Last Name modifies the First Name value instead.
-
-Detailed defect reports are documented separately in `06-defect-reports.md`.
-- The expected scope of Reset App State is not defined.
-- It is unclear which application state should be reset.
-- Because no expected behavior is available, the observed result cannot be classified as Pass or Fail.
-
-**Next Action:**
-- Clarify which application data or state Reset App State is expected to reset.
-- Define the expected result and execute the test again.
